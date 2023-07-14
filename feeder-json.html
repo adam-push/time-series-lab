@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="icon" href="feeder_icon.jpg" type="image/jpeg" sizes="16x16"/>
+    <link rel="stylesheet" href="style.css"/>
+    <title>JSON data feeder</title>
+    <script type="text/javascript" src="diffusion-unminified-6.9.1.js"></script>
+  </head>
+  <body>
+    <img src="demobanner.png">
+    <h2>JSON data feeder</h2>
+
+    <form id="publish_form">
+      <fieldset>
+        <legend>Diffusion server details</legend>
+        <label for="diff_host">Hostname:</label>
+        <input type="text" name="diff_host" value="localhost" id="diff_host" size="20">
+        <br/>
+        <label for="diff_port">Port:</label>
+        <input type="text" name="diff_port" value="8080" id="diff_port" size="5">
+        <br/>
+        <label for="diff_username">Username:</label>
+        <input type="text" name="diff_username" value="admin" id="diff_username" size="10">
+        <br/>
+        <label for="diff_password">Password:</label>
+        <input type="password" name="diff_password" value="password" id="diff_password" size="20">
+        <br/>
+        <label><img style="width: 32px; height: 32px" id="connection_state" src="disconnected.png"></img></label>
+        <input type="button" id="btn_connect" onclick="connect()" value="Connect"></input>
+      </fieldset>
+      <fieldset>
+        <legend>Topic details</legend>
+        <label for="diff_topic">Topic:</label>
+        <input type="text" name="topic" value="json/AUD-USD" id="diff_topic" size="50">
+        <br/>
+        <label for="delay">Publishing delay:</label>
+        <input type="text" name="delay" value="1000" id="delay" size="5">
+      </fieldset>
+
+      File: <input type="file" id="fileInput"/>
+
+      <br/>
+      <br/>
+      <input type="button" id="btn_publish" onclick="publish()" value="Begin publishing"></input>
+    </form>
+
+    <script type="text/javascript" src="feeder-json.js"></script>
+  </body>
+</html>
+      

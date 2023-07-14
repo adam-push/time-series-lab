@@ -1,0 +1,36 @@
+fieldset {
+    background-color: #eeeeee;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+legend {
+    background-color: #dddddd;
+    color: black;
+    padding: 5px 10px;
+    border: solid 1px black;
+    border-radius: 8px;
+}
+
+label {
+    display: inline-block;
+    font-weight: bold;
+    width: 8em;
+    text-align: right;
+}
+
+input {
+    margin: 4px;
+}
+
+.left-column {
+    display: inline-block;
+    float: left;
+    width: 45%;
+}
+
+.right-column {
+    display: inline-block;
+    float: right;
+    width: 45%;
+}

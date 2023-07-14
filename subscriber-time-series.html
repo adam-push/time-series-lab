@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="icon" href="feeder_icon.jpg" type="image/jpeg" sizes="16x16"/>
+    <link rel="stylesheet" href="style.css"/>
+    <title>Time series subscriber</title>
+    <script type="text/javascript" src="diffusion-unminified-6.9.1.js"></script>
+  </head>
+  <body>
+    <img src="demobanner.png">
+    <h2>Time series subscriber</h2>
+
+    <form id="publish_form">
+      <fieldset>
+        <legend>Diffusion server details</legend>
+        <label for="diff_host">Hostname:</label>
+        <input type="text" name="diff_host" value="localhost" id="diff_host" size="20">
+        <br/>
+        <label for="diff_port">Port:</label>
+        <input type="text" name="diff_port" value="8080" id="diff_port" size="5">
+        <br/>
+        <label for="diff_username">Username:</label>
+        <input type="text" name="diff_username" value="admin" id="diff_username" size="10">
+        <br/>
+        <label for="diff_password">Password:</label>
+        <input type="password" name="diff_password" value="password" id="diff_password" size="20">
+        <br/>
+        <label><img style="width: 32px; height: 32px" id="connection_state" src="disconnected.png"></img></label>
+        <input type="button" id="btn_connect" onclick="connect()" value="Connect"></input>
+      </fieldset>
+
+      <div>
+      <fieldset class="right-column">
+        <legend>Topic details</legend>
+        <label for="diff_topic_sub">Topic:</label>
+        <input type="text" name="topic" value="timeseries/AUD-USD" id="diff_topic_sub" size="50">
+        <input type="button" id="btn_subscribe" onclick="subscribe()" value="Subscribe" disabled></input>
+
+        <table id="subscription_table">
+          <thead>
+            <tr>
+              <th>Seq</th>
+              <th>Timestamp</th>
+              <th>JSON</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+
+      </fieldset>
+      <fieldset class="left-column">
+        <legend>Topic details</legend>
+        <label for="diff_topic_query">Topic:</label>
+        <input type="text" name="topic" value="json/AUD-USD" id="diff_topic_query" size="50">
+        <input type="button" id="btn_query" onclick="query()" value="Query" disabled></input>
+
+        <table id="query_table">
+          <thead>
+            <tr>
+              <th>Seq</th>
+              <th>Timestamp</th>
+              <th>JSON</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+
+      </fieldset>
+      </div>
+    </form>
+
+    <script type="text/javascript" src="subscriber-time-series.js"></script>
+  </body>
+</html>
+      
+
+  
