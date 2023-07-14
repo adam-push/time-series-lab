@@ -31,7 +31,7 @@
       </fieldset>
 
       <div>
-      <fieldset class="right-column">
+      <fieldset class="left-column">
         <legend>Topic details</legend>
         <label for="diff_topic_sub">Topic:</label>
         <input type="text" name="topic" value="timeseries/AUD-USD" id="diff_topic_sub" size="50">
@@ -50,10 +50,10 @@
         </table>
 
       </fieldset>
-      <fieldset class="left-column">
+      <fieldset class="right-column">
         <legend>Topic details</legend>
         <label for="diff_topic_query">Topic:</label>
-        <input type="text" name="topic" value="json/AUD-USD" id="diff_topic_query" size="50">
+        <input type="text" name="topic" value="timeseries/AUD-USD" id="diff_topic_query" size="50">
         <input type="button" id="btn_query" onclick="query()" value="Query" disabled></input>
 
         <table id="query_table">
