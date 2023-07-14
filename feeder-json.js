@@ -41,6 +41,13 @@ async function loadFile() {
 }
 
 //
+// Helper function to update the message count on the page.
+//
+function updateCount(count) {
+    document.getElementById('msg_count').innerText = count;
+}
+
+//
 // Helper function to connect to Diffusion and update UI elements.
 //
 async function connect() {
@@ -86,7 +93,10 @@ async function publish() {
         }
         else {
             let line = lines[count++];
-            session.topicUpdate.set(topicName, JSONDataType, JSON.parse(line));
+            session.topicUpdate.set(topicName, JSONDataType, JSON.parse(line))
+                .then(() => {
+                    updateCount(count);
+                });
         }
     }, delay);
 }
